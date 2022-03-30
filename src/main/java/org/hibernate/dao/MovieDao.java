@@ -1,6 +1,5 @@
 package org.hibernate.dao;
 
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.util.HibernateUtil;
@@ -66,6 +65,7 @@ public class MovieDao {
             }
         }
     }
+
     public void deleteMovie(long id){
         Transaction transaction = null;
         Movie movie = null;

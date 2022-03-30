@@ -15,7 +15,6 @@ public class MovieResource {
     }
 
     @GET
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     public List<Movie> getMovies() throws Exception {
         System.out.println("getMovies called...");
@@ -24,7 +23,6 @@ public class MovieResource {
 
     @GET
     @Path("movie/{id}")
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     public Movie getMovie(@PathParam("id") long id) throws Exception {
         System.out.println("getMovie called...");
@@ -59,8 +57,6 @@ public class MovieResource {
 
     @DELETE
     @Path("movie/{id}")
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     public String deleteMovie(@PathParam("id") long id) throws Exception {
         System.out.println("deleteMovie called...");
         movieDao.deleteMovie(id);

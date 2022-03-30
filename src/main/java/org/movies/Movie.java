@@ -1,5 +1,6 @@
 package org.movies;
 
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 import javax.persistence.*;
@@ -28,6 +29,7 @@ public class Movie {
         return id;
     }
 
+    @XmlElement
     public void setId(long id) {
         this.id = id;
     }
@@ -36,6 +38,7 @@ public class Movie {
         return name;
     }
 
+    @XmlElement
     public void setName(String name) {
         this.name = name;
     }
@@ -44,6 +47,7 @@ public class Movie {
         return rating;
     }
 
+    @XmlElement
     public void setRating(int rating) {
         this.rating = rating;
     }
