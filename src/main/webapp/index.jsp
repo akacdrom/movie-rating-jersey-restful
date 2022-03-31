@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Movies</title>
@@ -76,5 +75,4 @@
             </script>
     </section>
 </body>
-
 </html>
