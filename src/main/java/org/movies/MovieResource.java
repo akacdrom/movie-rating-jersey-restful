@@ -38,8 +38,8 @@ public class MovieResource {
     public Movie createMovie(Movie movie) throws Exception {
         System.out.println("createMovie called...");
         System.out.println(movie);
-        Movie movie1 = new Movie(movie.getName(),movie.getRating(),getRequest.getMoviePoster(movie.getName()));
-        movieDao.createMovie(movie1);
+        Movie movieParConst = new Movie(movie.getName(),movie.getRating(),getRequest.getMoviePoster(movie.getName()));
+        movieDao.createMovie(movieParConst);
         return movie;
     }
 
