@@ -2,13 +2,16 @@ package org.movies;
 
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import org.client.GetRequest;
 
 import javax.persistence.*;
+import java.io.IOException;
 
 @XmlRootElement
 @Entity(name = "movie")
 @Table(name = "movie")
 public class Movie {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -21,8 +24,17 @@ public class Movie {
     @Column(name = "rating")
     private int rating;
 
-    public Movie(){
+    @Column(name = "poster")
+    private String poster;
+
+    public Movie() {
         super();
+    }
+
+    public Movie(String name, int rating, String poster) {
+        this.name = name;
+        this.rating = rating;
+        this.poster = poster;
     }
 
     public long getId() {
@@ -50,6 +62,15 @@ public class Movie {
     @XmlElement
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    @XmlElement
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     @Override

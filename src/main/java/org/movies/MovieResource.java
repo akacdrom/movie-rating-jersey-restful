@@ -2,6 +2,7 @@ package org.movies;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import org.client.GetRequest;
 import org.hibernate.dao.MovieDao;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public class MovieResource {
 
     MovieDao movieDao = new MovieDao();
+    GetRequest getRequest = new GetRequest();
 
     public MovieResource() throws Exception {
     }
@@ -36,7 +38,8 @@ public class MovieResource {
     public Movie createMovie(Movie movie) throws Exception {
         System.out.println("createMovie called...");
         System.out.println(movie);
-        movieDao.createMovie(movie);
+        Movie movie1 = new Movie(movie.getName(),movie.getRating(),getRequest.getMoviePoster(movie.getName()));
+        movieDao.createMovie(movie1);
         return movie;
     }
 

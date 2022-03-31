@@ -50,40 +50,30 @@
     <section>
         <h1>Movies with Movies</h1>
 
-        <!-- TABLE CONSTRUCTION-->
         <table id='table'>
-            <!-- HEADING FORMATION -->
             <tr>
+                <th>Poster</th>
+                <th>ID</th>
                 <th>Movie Name</th>
                 <th>Rating</th>
             </tr>
 
             <script>
                 $(document).ready(function () {
-                    // FETCHING DATA FROM JSON FILE
-                    $.getJSON("http://localhost:8080/rest-jersey/webapi/movies",
-                        function (data) {
-                        var movie = '';
-
-                        // ITERATING THROUGH OBJECTS
+                    $.getJSON("http://localhost:8080/rest-jersey/webapi/movies", function (data) {
+                    var movie = '';
                         $.each(data, function (key, value) {
-
-                            //CONSTRUCTION OF ROWS HAVING
-                            // DATA FROM JSON OBJECT
                             movie += '<tr>';
-                            movie += '<td>' +
-                            value.name + '</td>';
-                            movie += '<td>' +
-                            value.rating + '</td>';
+                            movie += '<td> <img src='+ value.poster +'></td>';
+                            movie += '<td>' + value.id + '</td>';
+                            movie += '<td>'+ value.name + '</td>';
+                            movie += '<td>' + value.rating + '</td>';
                             movie += '</tr>';
                         });
-
-                        //INSERTING ROWS INTO TABLE
                         $('#table').append(movie);
                     });
                 });
             </script>
-
     </section>
 </body>
 
