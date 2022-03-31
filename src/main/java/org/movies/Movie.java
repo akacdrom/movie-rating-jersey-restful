@@ -2,10 +2,8 @@ package org.movies;
 
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
-import org.client.GetRequest;
 
 import javax.persistence.*;
-import java.io.IOException;
 
 @XmlRootElement
 @Entity(name = "movie")

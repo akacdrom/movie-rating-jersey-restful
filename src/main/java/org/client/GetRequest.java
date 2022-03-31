@@ -23,13 +23,14 @@ public class GetRequest {
         }
 
         BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-        String jsonObj = br.readLine();
-        int i = jsonObj.indexOf("{");
-        jsonObj = jsonObj.substring(i);
-        JSONObject jsonObject = new JSONObject(jsonObj);
-        String pageName = jsonObject.getJSONArray("results").getJSONObject(0).getString("poster_path");
+        String jsonStr = br.readLine();
+        //remove '?' from Json Object
+        int i = jsonStr.indexOf("{");
+        jsonStr = jsonStr.substring(i);
+        JSONObject jsonObject = new JSONObject(jsonStr);
+        String posterPath = jsonObject.getJSONArray("results").getJSONObject(0).getString("poster_path");
 
         conn.disconnect();
-        return "https://image.tmdb.org/t/p/w500"+pageName;
+        return "https://image.tmdb.org/t/p/w500"+posterPath;
     }
 }

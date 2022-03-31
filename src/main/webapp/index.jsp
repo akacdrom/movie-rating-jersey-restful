@@ -10,6 +10,12 @@
 
     <!-- CSS FOR STYLING THE PAGE -->
     <style>
+        body{
+        background-image: url('https://images.alphacoders.com/582/58241.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
         table {
             background: #9c9c9c;
             margin: 0 auto;
@@ -19,7 +25,7 @@
 
         h1 {
             text-align: center;
-            color: #000000;
+            color: #ffffff;
             font-size: xx-large;
             font-family: 'Gill Sans',
                 'Gill Sans MT', ' Calibri',
